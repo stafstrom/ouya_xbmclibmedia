@@ -336,6 +336,10 @@ void CAdvancedSettings::Initialize()
   m_databaseVideo.Reset();
 
   m_logLevelHint = m_logLevel = LOG_LEVEL_NORMAL;
+
+  #if defined(TARGET_ANDROID)
+   m_libMediaPassThroughHack = true;			// Enables pass through with patched libmedia.so
+  #endif
 }
 
 bool CAdvancedSettings::Load()
@@ -426,6 +430,7 @@ void CAdvancedSettings::ParseSettingsFile(const CStdString &file)
 
     XMLUtils::GetFloat(pElement, "limiterhold", m_limiterHold, 0.0f, 100.0f);
     XMLUtils::GetFloat(pElement, "limiterrelease", m_limiterRelease, 0.001f, 100.0f);
+    
   }
 
   pElement = pRootElement->FirstChildElement("omx");
@@ -1086,6 +1091,10 @@ void CAdvancedSettings::ParseSettingsFile(const CStdString &file)
     XMLUtils::GetInt(pElement, "algorithmdirtyregions",     m_guiAlgorithmDirtyRegions);
     XMLUtils::GetInt(pElement, "nofliptimeout",             m_guiDirtyRegionNoFlipTimeout);
   }
+
+  #if defined(TARGET_ANDROID)
+   XMLUtils::GetBoolean(pRootElement, "libMediaPassThroughHack", m_libMediaPassThroughHack);
+  #endif
 
   // load in the GUISettings overrides:
   g_guiSettings.LoadXML(pRootElement, true);  // true to hide the settings we read in

@@ -1,4 +1,4 @@
-package tv.ouya.xbmc;
+package tv.ouya.xbmclibmedia;
 
 import android.app.NativeActivity;
 import android.content.Intent;
