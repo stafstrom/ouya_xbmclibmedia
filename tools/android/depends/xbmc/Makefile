@@ -21,8 +21,7 @@ CONFIGURE=cp -f $(CONFIG_SUB) $(CONFIG_GUESS) build-aux/ ;\
   --disable-sdl --disable-x11 --disable-xrandr \
   --disable-optical-drive --disable-joystick \
   --enable-shared-lib --disable-alsa \
-  --enable-libstagefright \
-  --disable-ffmpeg_ac3dts
+  --enable-libstagefright 
 
 
 all: $(SOURCE)/libxbmc.so
