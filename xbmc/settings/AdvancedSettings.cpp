@@ -111,11 +111,11 @@ void CAdvancedSettings::Initialize()
   m_DXVAForceProcessorRenderer = true;
   m_DXVANoDeintProcForProgressive = false;
   m_videoFpsDetect = 1;
-  m_stagefrightConfig.useAVCcodec = -1;
-  m_stagefrightConfig.useVC1codec = -1;
-  m_stagefrightConfig.useVPXcodec = -1;
-  m_stagefrightConfig.useMP4codec = -1;
-  m_stagefrightConfig.useMPEG2codec = -1;
+  m_stagefrightConfig.useAVCcodec = 1;
+  m_stagefrightConfig.useVC1codec = 1;
+  m_stagefrightConfig.useVPXcodec = 1;
+  m_stagefrightConfig.useMP4codec = 1;
+  m_stagefrightConfig.useMPEG2codec = 1;
   m_stagefrightConfig.useSwRenderer = false;
   m_stagefrightConfig.useInputDTS = false;
 
